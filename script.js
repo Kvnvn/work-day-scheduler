@@ -42,12 +42,16 @@ timeBlockElements.each(function () {
 $('.saveBtn').on('click', function () {});
 //$(this).attr(id)
 //$(this).val()
-//$(selector).parent(function)
-//$(selector).siblings(function)
-
+//$(selector).parent(function)-returns empty set
+//$(selector).siblings(function)-siblings are those having same parent element in DOM Tree.
+var timeBlockElements = $(this).parent(".time-block").attr("id")
+var descriptionContent = $(this).siblings(".description").val();
   //json stringify set item/ get item 
+localStorage.setItem(timeBlockElements, JSON.stringify(descriptionContent));
+//console.log
 //create user object from submission with onclick button
 //when button is clicked user input should be saved on to local storage
 //stores that data by settin it to local storage and saveBtn saves its within display
-
+//if local storage data gets item id than contains and  the whole block in browser
+localStorage.getItem(element.id)
 
