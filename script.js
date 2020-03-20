@@ -18,14 +18,28 @@ var currentHour = parseInt(moment().format("H"));
 
 var timeBlockElements = $(".time-block");
 // for each hour
+timeBlockElements.each(function () {
+  // get the hour of the block
+  // get reference to all the hours
+  var timeBlockHour = parseInt(this.id.split("-")[1]);
 
-// get the hour of the block
-// get reference to all the hours
-// how to determine if time is future/present/past
+  // how to determine if time is future/present/past
+  //if timeblock is less than current hour than change box to color of past css style
+  //else if it equals to same time as current then it should change present css style
+  //else change time block to future in css
+  if (timeBlockHour < currentHour) {
+    $(this).addClass("past");
+
+  } else if (timeBlockHour === currentHour) {
+
+    $(this).addClass("present");
+
+  } else {
+    $(this).addClass("future");
+  }
+});
 //create user object from submission with onclick button
+//when button is clicked user input should be saved on to local storage
+//stores that data by settin it to local storage and saveBtn saves its within display
 
-//store that data by settin it to local storage
-
-//have user input saved within local storage in order to retrieve whats on display
-//var timeBlocks = $(".time-block")
 
