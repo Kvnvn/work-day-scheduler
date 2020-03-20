@@ -15,8 +15,8 @@ $("#currentDay").text(moment().format('MMMM Do YYYY, h:mm:ss a'));
 
 // let currentHour be the hour of the current time of day
 var currentHour = parseInt(moment().format("H"));
-var timeBlockElements = $(".time-block");
 
+var timeBlockElements = $(".time-block");
 // for each hour
 timeBlockElements.each(function () {
   // get the hour of the block
@@ -29,29 +29,29 @@ timeBlockElements.each(function () {
   //else change time block to future in css
   if (timeBlockHour < currentHour) {
     $(this).addClass("past");
-
   } else if (timeBlockHour === currentHour) {
-
     $(this).addClass("present");
-
   } else {
     $(this).addClass("future");
   }
 });
-//insert saveBtn to save user input when clicked on
-$('.saveBtn').on('click', function () {});
+//create user object from submission with onclick button
 //$(this).attr(id)
 //$(this).val()
-//$(selector).parent(function)-returns empty set
-//$(selector).siblings(function)-siblings are those having same parent element in DOM Tree.
-var timeBlockElements = $(this).parent(".time-block").attr("id")
-var descriptionContent = $(this).siblings(".description").val();
-  //json stringify set item/ get item 
-localStorage.setItem(timeBlockElements, JSON.stringify(descriptionContent));
+//insert save button when clicked on 
+$('.saveBtn').on('click', function () {
+  //$(selector).parent(function)-returning an empty set
+  var timeBlockElements = $(this).parent(".time-block").attr("id")
+  //$(selector).siblings(function)-are those having the same parents in the dom tree^^
+  var descriptionContent = $(this).siblings(".description").val();
+  //store that data by settin it to local storage
+  localStorage.setItem(timeBlockElements, (descriptionContent));
+});
+//have user input saved within local storage in order to retrieve whats on display
+//var timeBlocks = $(".time-block")
 //console.log
 //create user object from submission with onclick button
 //when button is clicked user input should be saved on to local storage
 //stores that data by settin it to local storage and saveBtn saves its within display
-//if local storage data gets item id than contains and  the whole block in browser
-localStorage.getItem(element.id)
-
+//if local storage data gets item id than contains and  the whole description content in browser
+timeBlockElements.each(function (index, div)
