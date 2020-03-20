@@ -15,8 +15,8 @@ $("#currentDay").text(moment().format('MMMM Do YYYY, h:mm:ss a'));
 
 // let currentHour be the hour of the current time of day
 var currentHour = parseInt(moment().format("H"));
-
 var timeBlockElements = $(".time-block");
+
 // for each hour
 timeBlockElements.each(function () {
   // get the hour of the block
@@ -38,6 +38,14 @@ timeBlockElements.each(function () {
     $(this).addClass("future");
   }
 });
+//insert saveBtn to save user input when clicked on
+$('.saveBtn').on('click', function () {});
+//$(this).attr(id)
+//$(this).val()
+//$(selector).parent(function)
+//$(selector).siblings(function)
+
+  //json stringify set item/ get item 
 //create user object from submission with onclick button
 //when button is clicked user input should be saved on to local storage
 //stores that data by settin it to local storage and saveBtn saves its within display
