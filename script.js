@@ -54,4 +54,10 @@ $('.saveBtn').on('click', function () {
 //when button is clicked user input should be saved on to local storage
 //stores that data by settin it to local storage and saveBtn saves its within display
 //if local storage data gets item id than contains and  the whole description content in browser
-timeBlockElements.each(function (index, div)
+timeBlockElements.each(function (index,div) {
+  if (localStorage.getItem(div.id)) {
+
+    var usertextcontent = localStorage.getItem(div.id)
+    $(div).children("textarea").val(usertextcontent)
+  }
+});
